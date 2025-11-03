@@ -1,0 +1,21 @@
+#txt-1 {
+    animation: txt-1 2s ease-in-out 0s infinite;
+}
+
+@keyframes txt-1 {
+    0% { 
+        color: var(--accent-2); 
+    }
+    25% { 
+        color: var(--accent); 
+    }
+    50% { 
+        color: var(--accent-3); 
+    }
+    75% { 
+        color: var(--accent); 
+    }
+    100% { 
+        color: var(--accent-2);
+    }
+}
