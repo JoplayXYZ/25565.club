@@ -1,6 +1,8 @@
 :root {
     --bg: #0e1b14;
-    --bg-2: #020202;
+    --bg-2: #0a0a0a;
+    --bg-3: #313131;
+
     --accent: #3dd96f;
     --accent-2: #28b4ad;
     --accent-3: #1e40ff;
@@ -15,21 +17,22 @@
 }
 
 :root[data-theme="light"] {
-    /* Backgrounds */
-    --bg: #c4e0bb;       /* Main page background */
-    --bg-2: #92e687;     /* Card/section background: bright, clean contrast */
+    --bg: #c4e0bb;
+    --bg-2: #92e687;
+    --bg-3: #b1b8b2;
 
-    /* Accent & links */
-    --accent: #28b463;   /* Deep green for accents */
-    --link: #1e8449;     /* Dark green for clickable links */
+    --accent: #3dd96f;
+    --accent-2: #28b4ad;
+    --accent-3: #1e40ff;
+    
 
-    /* Text colors */
-    --txt: #1c2a20;      /* Primary text: dark */
-    --txt-2: #3d5a45;    /* Secondary text: muted */
-    --txt-3: #62786c;    /* Tertiary text: subtle captions */
+    --txt: #1c2a20;
+    --txt-2: #3d5a45;
+    --txt-3: #62786c;
 
-    /* Shadow for elevated elements */
-    --shadow: 0 4px 16px rgba(40, 180, 99, 0.15);
+    --link: #1e8449;
+
+    --radius: 12px;
 }
 
 
@@ -71,8 +74,10 @@ p {
     line-height: 1.25rem;
 }
 
-a {
+a, .theme-toggle {
     color: var(--link);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .codeblock {
