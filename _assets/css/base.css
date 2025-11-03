@@ -1,0 +1,79 @@
+:root {
+    /* 🎨 Minecraft-inspired palette */
+    --bg: #0e1b14;          /* Deep forest background */
+    --bg-2: #020202;        /* Slightly lighter panel green */
+    --accent: #3DD96F;      /* Vibrant Minecraft emerald green */
+
+    --txt: #E8FCEE;         /* Crisp light text with a green tint */
+    --txt-2: #B4D7BE;       /* Softer green-gray for secondary text */
+    --txt-3: #7A8E81;       /* Muted tone for paragraphs */
+
+    --radius: 12px;
+}
+
+:root[data-theme="light"] {
+    --bg: #bee4c0;
+    --bg-2: #f3f3f3;
+    --accent: #2ECC71;
+
+    --txt: #1E2B22;
+    --txt-2: #4B6654;
+    --txt-3: #76897E;
+
+    --shadow: 0 0 12px rgba(46, 204, 113, 0.15);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--txt);
+    font-family: 'monospace', monospace;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: var(--bg-2);
+    padding: 10px;
+    border-bottom: var(--accent) 2px solid;
+    border-radius: var(--radius);
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-2);
+    padding: 10px;
+    border-bottom: var(--accent) 2px solid;
+    border-radius: var(--radius);
+    max-width: 800px;
+}
+
+.codeblock {
+    background-color: var(--bg);
+    padding: 3px;
+    border-radius: 10px;
+    font-family: monospace;
+    color: var(--txt-2);
+}
+
+
+p {
+    color: var(--txt-2);
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
