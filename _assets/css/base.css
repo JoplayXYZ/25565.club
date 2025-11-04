@@ -14,6 +14,9 @@
     --link: #8ceeb5;
 
     --radius: 12px;
+
+    --danger-1: #eb2b00;
+    --danger-2: #3b0505;
 }
 
 :root[data-theme="light"] {
@@ -33,6 +36,9 @@
     --link: #1e8449;
 
     --radius: 12px;
+
+    --danger-1: #e12424;
+    --danger-2: #eac9c9;
 }
 
 
