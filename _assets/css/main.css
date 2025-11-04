@@ -6,7 +6,7 @@ nav {
     background-color: var(--bg-2);
     padding: 10px;
     border-bottom: 2px solid var(--accent);
-    border-radius: var(--radius);
+    border-radius: 0px 0px 12px 12px;
     width: calc(100vw - 20px);
 }
 
@@ -51,7 +51,7 @@ footer {
     background-color: var(--bg-2);
     padding: 10px;
     border-top: 2px solid var(--accent);
-    border-radius: var(--radius);
+    border-radius: 12px 12px 0px 0px;
     margin-top: 2rem;
 }
 
