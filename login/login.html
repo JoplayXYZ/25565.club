@@ -44,9 +44,11 @@
         </section>
 
         <section style="gap: 5px;">
-            <input id="username" type="text" placeholder="Username">
-            <input id="password" type="password" placeholder="Password">
-            <button onclick="login()">Login</button>
+            <form>
+                <input id="username" type="text" placeholder="Username" required>
+                <input id="password" type="password" placeholder="Password" required>
+                <button type="submit" onclick="login()">Login</button>
+            </form>
         </section>
 
         <section>

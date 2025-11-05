@@ -63,11 +63,17 @@ input {
     padding: 10px 14px;
     border: 2px solid var(--accent);
     border-radius: var(--radius);
-    transition: 
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
     box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--accent);
 }
 
 
@@ -114,4 +120,11 @@ button.btn-danger {
 button.btn-danger:hover {
     background-color: var(--danger-1);
     color: var(--txt);
+}
+
+form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

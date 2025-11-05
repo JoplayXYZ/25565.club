@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>25565 - Login</title>
+    <title>25565 - Create Account</title>
 
     <link rel="stylesheet" href="/_assets/css/base.css" />
     <link rel="stylesheet" href="/_assets/css/main.css" />
@@ -17,10 +17,10 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring.js"></script>
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="25565.club - Home">
+    <meta property="og:title" content="25565.club - Login">
     <meta property="og:url" content="https://25565.club">
     <meta property="og:image" content="https://25565.club/_assets/favicon/favicon-512x.png">
-    <meta property="og:description" content="25565.club - Minecraft server tools">
+    <meta property="og:description" content="25565.club - Create account">
 </head>
 <body>
     
@@ -43,11 +43,15 @@
             <p>Create a 25565.club account</p>
         </section>
 
-        <section style="gap: 5px;">
-            <input id="username" type="text" placeholder="Username">
-            <input id="password" type="password" placeholder="Password">
-            <input id="invite" type="text" placeholder="Invite Code">
-            <button onclick="register()">Create Account</button>
+        <section> 
+            <form> 
+                <input id="username" type="text" placeholder="Username" required>
+                <input id="password" type="password" placeholder="Password" required>
+                <input id="invite" type="text" placeholder="Invite Code" required>
+                <input id="agree" type="checkbox" name="1" required>
+                <p>I agree to the <a href="/legal/tos.html">Terms of Service</a> and <a href="/legal/privacy.html">Privacy policy</a></p>
+                <button type="submit" onclick="register()">Create Account</button>
+            </form>
         </section>
 
         <section>
