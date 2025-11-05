@@ -39,28 +39,25 @@
 
     <main>
         <section>
-            <h1>Dashboard</h1>
-            <p>Manage your 25565.club subdomains / account</p>
+            <h1>Edit subdomain</h1>
+            <p>Edit your subdomain</p>
         </section>
 
         <section style="gap: 5px;">
-            <h2>Subdomains (1 / 5)</h2>
-            <p>Manage your subdomains</p>
-            <div style="gap: 0px;">
-                <p>- test.25565.club</p>
-                <p>| A: none</p>
-                <p>| AAAA: none</p>
-                <p>| CNAME: none</p>
-                <p>| SRV: none</p>
-                <button onclick="window.location.href = '/dash/edit.html'">Edit</button>
-            </div>
+            <h2>Records</h2>
+            <select>
+                <option>A     (ipv4)</option>
+                <option>AAAA  (ipv6)</option>
+                <option>CNAME</option>
+                <option disabled>SRV</option>
+            </select>
+            <input id="record-srv" type="text">
         </section>
 
         <section style="gap: 5px;">
-            <h2>Account (username)</h2>
-            <p>Manage your account</p>
-            <button>Log-out!</button>
-            <button class="btn-danger">Delete account!!!</button>
+            <h2>Options</h2>
+            <button>Save</button>
+            <button class="btn-danger">Cancel</button>
         </section>
     </main>
     <footer>
