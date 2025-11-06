@@ -43,21 +43,22 @@
             <p>Create a .25565.club subdomain</p>
         </section>
 
-        <section>
+        <section style="gap: 5px;">
             <h2>Name</h2>
-            <input id="subdomain" type="text" required>
+            <input id="subdomain" type="text" required placeholder="[subdomain].25565.club">
             <h3>.25565.club</h3>
         </section>
 
         <section style="gap: 5px;">
             <h2>Records</h2>
+            <a href="/docs?page=records">help</a>
             <select>
                 <option>A     (ipv4)</option>
                 <option>AAAA  (ipv6)</option>
                 <option>CNAME</option>
                 <option disabled>SRV</option>
             </select>
-            <input id="record" type="text">
+            <input id="record" type="text" placeholder="dns-record">
         </section>
 
         <section style="gap: 5px;">
