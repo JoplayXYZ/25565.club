@@ -1,0 +1,44 @@
+---
+import Mainlayout from '../../layouts/main.astro'; 
+---
+
+<Mainlayout title="Create an account">
+	<main>
+        <section id="warning" class="hidden" style="background-color: var(--danger-2); border-bottom: 2px solid var(--danger-1);">
+        </section>
+		<section>
+            <h1>Welcome to 25565.club</h1>
+        </section>
+        <section>
+			<p>Your account is being set up...</p>
+            <div style="align-items: center; text-align: center;">
+                <l-zoomies size="100" stroke="6" bg-opacity="0.05" speed="1.1" color="var(--accent)" />
+            </div>
+		</section>
+	</main>
+    <script>
+      import { zoomies } from 'ldrs'
+      zoomies.register()
+    </script>
+    <script type="module">
+        import { loggedIn } from "/scripts/main.js"
+        const warningSection = document.getElementById("warning");
+        const loaderEl = document.querySelector("l-zoomies");
+
+        setTimeout(() => {
+            if (loggedIn == true) {
+                window.location.href = "/dash"
+            } else {
+                if (warningSection || loaderEl) {
+                    warningSection.classList.remove("hidden")
+                    loaderEl.classList.add("hidden")
+                    warningSection.innerHTML = `
+                        <h3>Account creation / login failed!</h3>
+                        <p>Please try signin in again!</p>`
+                }
+            }
+        }, 2000)
+
+    </script>
+    <script type="module" src="/scripts/main.js"></script>
+</Mainlayout>

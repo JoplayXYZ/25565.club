@@ -1,0 +1,30 @@
+---
+import Mainlayout from '../../layouts/main.astro'; 
+---
+
+<Mainlayout title="Edit subdomain">
+    <main>
+        <section>
+            <h1>Edit subdomain</h1>
+            <p>Edit your subdomain</p>
+        </section>
+
+        <section style="gap: 5px;">
+            <h2>Records</h2>
+            <select>
+                <option>A     (ipv4)</option>
+                <option>AAAA  (ipv6)</option>
+                <option>CNAME</option>
+                <option disabled>SRV (soon)</option>
+            </select>
+            <input id="record" type="text" placeholder="value">
+        </section>
+
+        <section style="gap: 5px;">
+            <h2>Options</h2>
+            <button>Save</button>
+            <button class="btn-danger" onclick="window.location.href = '/dash'">Cancel</button>
+        </section>
+    </main>
+	<script type="module" src="/scripts/main.js"></script>
+</Mainlayout>

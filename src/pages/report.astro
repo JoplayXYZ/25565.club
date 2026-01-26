@@ -1,0 +1,37 @@
+---
+import Mainlayout from '../layouts/main.astro'; 
+const title = 'Report';
+---
+
+<Mainlayout title={title}>
+	<main>
+        <section>
+            <h1>Report an Issue</h1>
+            <p>Report bugs, abusive or malicious subdomains, phishing, or other issues.</p>
+        </section>
+        <section style="gap: 5px;">
+            <select id="field1" aria-label="Report category" required>
+                <option value="">Select a category</option>
+                <option>Technical: Bugs, exploits, performance</option>
+                <option>Subdomains: Malware, scams, phishing</option>
+                <option>Abuse: Harassment, hate, threats</option>
+                <option>Other: General feedback or questions</option>
+            </select>
+            <input id="field2" placeholder="Title: the title of your report / feedback" required>
+            <textarea id="field3" placeholder="Additional Information" rows="5" required></textarea>
+            <input id="field4" placeholder="Your account's username (optional)">
+            <button id="submitbtn">Submit</button>
+            <div>
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAACOgm7zOff5KT0yT" data-theme="dark" data-size="normal" data-callback="onSuccess" ></div>
+            </div>
+        </section>
+	</main>
+    <script>
+        const field1 = document.getElementById("field1")
+        const field2 = document.getElementById("field2")
+        const field3 = document.getElementById("field3")
+        const field4 = document.getElementById("field4")
+        const submitbtn = document.getElementById("submitbtn")
+        const turnstile = document.getElementById("turnstile")
+    </script>
+</Mainlayout>

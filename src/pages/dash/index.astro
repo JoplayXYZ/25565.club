@@ -1,0 +1,37 @@
+---
+import Mainlayout from '../../layouts/main.astro'; 
+---
+
+<Mainlayout title="Dashboard">
+    <main>
+        <section>
+            <h1>Dashboard</h1>
+            <p>Manage your 25565.club subdomains / account</p>
+        </section>
+
+        <section style="gap: 5px;">
+            <h2>Subdomains (1 / 5)</h2>
+            <p>Manage your subdomains</p>
+            <div style="gap: 0px;">
+                <p>- test.25565.club</p>
+                <p>| A: none</p>
+                <p>| AAAA: none</p>
+                <p>| CNAME: none</p>
+                <p>| SRV: none</p>
+                <button onclick="window.location.href = '/dash/edit.html'">Edit</button>
+            </div>
+        </section>
+
+        <section>
+            <button onclick="window.location.href = '/dash/create.html'">Add subdomain</button>
+        </section>
+
+        <section style="gap: 5px;">
+            <h2>Account: <span id="username"></span></h2>
+            <p>Manage your account</p>
+            <button id="logoutbtn">Log-out!</button>
+            <button class="btn-danger">Delete account!!!</button>
+        </section>
+    </main>
+    <script type="module" src="/scripts/main.js"></script>
+</Mainlayout>
