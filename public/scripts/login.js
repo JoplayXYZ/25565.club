@@ -80,7 +80,17 @@ export async function login(mode) {
             window.location.href = "/creating-account"
         }
     } catch(err) {
-        console.error("Failed to log in: " + err)
+        console.error("Failed to log in: " + err);
+
+        if (authstatus) {
+            const errMsg = err.message || String(err);
+            if (errMsg.includes("user has been blocked")) {
+                authstatus.textContent = "Your account has been terminated, if you believe this is a mistake please contact our support!";
+            } else {
+                authstatus.textContent = errMsg;
+            }
+            return;
+        }
     }
 }
 
