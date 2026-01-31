@@ -1,5 +1,4 @@
 ---
-import Sitelist from '../components/sitelist.astro';
 import Mainlayout from '../layouts/main.astro'; 
 const title = 'Home';
 ---
@@ -18,10 +17,6 @@ const title = 'Home';
 		</section>
 		<section>
 			<button onclick="window.location.href = '/auth/register'">Get Started</button>
-		</section>
-		<section>
-			<h2>Featured Sites</h2>
-			<Sitelist list="featured" />
 		</section>
 	</main>
 </Mainlayout>
