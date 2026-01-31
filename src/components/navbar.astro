@@ -137,16 +137,19 @@ import LogoInvert from '../assets/img/25565_invert.png';
         }
     }
 </style>
-<!-- <script type="module">
+<script type="module">
     const btntxt = document.getElementById("loginbtntxt");
     const btn = document.getElementById("loginbtn");
-    import { loggedIn } from "/src/scripts/main.js";
+    import { loggedIn } from "/scripts/main.js";
 
-    if (loggedIn) {
-        btntxt.textContent = "Dashboard";
-        btn.href = "/dash";
-    }
-</script> -->
+    loginCheckComplete.then(() => { 
+        if (loggedIn) {
+            btntxt.textContent = "Dashboard";
+            btn.href = "/dash";
+        }
+    });
+    
+</script>
 <script>
     const menutoggle = document.getElementById("nav-menu");
 
