@@ -1,8 +1,6 @@
 ---
-const { title = "Home" } = Astro.props
-const url = new URL(Astro.request.url);
-const hostname = url.hostname;
-const origin = url.origin; // protocol + hostname (+ port)
+const { title = "Home" } = Astro.props;
+const site = import.meta.env.PUBLIC_SITE_URL;
 import Navbar from '../components/navbar.astro';
 import Footer from '../components/footer.astro'
 import '../styles/base.css';
@@ -28,7 +26,7 @@ import '../styles/main.css';
     <meta property="og:site_name" content="25565.club" />
     <meta property="og:url" content={Astro.site} />
     <meta property="og:title" content={`25565.club - ${title}`} />
-    <meta property="og:image" content={`${hostname}/favicon/favicon-512x.png`} />
+    <meta property="og:image" content={`${site}/favicon/favicon-512x.png`} />
     <meta property="og:description" content="Subdomains for gameservers, websites and more. For FREE!" />
 </head>
 <body>
