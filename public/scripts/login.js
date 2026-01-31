@@ -6,7 +6,7 @@ const logoutbtn = document.getElementById('logoutbtn');
 const tosandprivacy = document.getElementById('agree');
 const authstatus = document.getElementById("authstatus");
 
-const client = new Client()
+export const client = new Client()
     .setEndpoint('https://appwrite.chjk.xyz/v1')
     .setProject('6908f03d000f465ba099');
 
