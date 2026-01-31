@@ -1,0 +1,188 @@
+---
+import { Image } from 'astro:assets';
+import { LogIn, AppWindow, Menu } from '@lucide/astro';
+import Logo from '../assets/img/25565.png';
+import LogoInvert from '../assets/img/25565_invert.png';
+---
+<div class="nav-sticky">
+    <nav>
+        <div class="section">
+            <div class="logo">
+                <a href="/">
+                    <Image src={LogoInvert} loading="eager" alt="25565 logo" />
+                </a>
+            </div>
+            <a href="/"><h2 style="color: var(--txt);">25565.club</h2></a><h2 style="font-variant: small-caps; font-weight: lighter; color: var(--blue)">beta</h2>
+            
+            
+            <a href="/subdomains" class="link nav-foldable">Subdomains</a>
+            <a href="/docs" class="link nav-foldable">Documentation</a>
+        </div>
+        
+        
+        <!-- <p id="theme-toggle" class="theme-toggle">Change theme</p> -->
+        <a href="/auth/login" class="linkbtn" id="loginbtn"><LogIn size="14" /> <span id="loginbtntxt">Login</span></a> 
+
+        <Menu id="nav-menu" />
+    </nav>
+</div>
+<style>
+    nav {
+        position: static;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: var(--bg-2);
+        padding: 10px;
+        /* border-bottom: 2px solid var(--accent); */
+        /* border-radius: 0px 0px 12px 12px; */
+        width: calc(100vw - 20px);
+    }
+
+    nav .section {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .logo img {
+        image-rendering: pixelated;
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo {
+        transition: box-shadow 0.3s ease;
+    }
+
+    .logo:hover {
+        box-shadow: 0 0 12px var(--accent);
+    }
+
+    p svg, a svg {
+        vertical-align: middle;
+    }
+
+    .linkbtn {
+        position: relative;
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        z-index: 0;
+    }
+
+    .linkbtn::before {
+        content: "";
+        position: absolute;
+        inset: -10px;
+        background-color: var(--bg-3);
+        opacity: 0;
+        transition: opacity 0.15s ease;
+        z-index: -1;
+        border-radius: 8px;
+    }
+
+    .linkbtn:hover::before {
+        opacity: 1;
+    }
+
+    #nav-menu {
+        display: none;
+    }
+
+    .nav-hidden {
+        display: none;
+    }
+
+
+    @media (max-width: 520px) {
+        nav {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        nav .section {
+            flex-direction: column;
+            align-items: stretch;
+            width: 100%;
+            gap: 0;
+        }
+
+        .nav-foldable {
+            width: 100%;
+            padding: 12px 16px;
+            border-top: 1px solid var(--bg-3);
+            text-align: left;
+        }
+
+        .nav-foldable:first-child {
+            border-top: none;
+        }
+
+        .link:first-child {
+            margin-top: 1rem;
+        }
+
+        .linkbtn {
+            margin-top: 8px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        #nav-menu {
+            margin-top: 1rem;
+            display: block;
+            cursor: pointer;
+        }
+    }
+</style>
+<script type="module">
+    const btntxt = document.getElementById("loginbtntxt");
+    const btn = document.getElementById("loginbtn");
+    import { loggedIn } from "/scripts/main.js";
+
+    if (loggedIn) {
+        btntxt.textContent = "Dashboard";
+        btn.href = "/dash";
+    }
+</script>
+<script>
+    const menutoggle = document.getElementById("nav-menu");
+
+    function hideNav() {
+        document.querySelectorAll(".nav-foldable").forEach(el => {
+            el.classList.add("nav-hidden");
+        });
+    }
+
+    function showNav() {
+        document.querySelectorAll(".nav-foldable").forEach(el => {
+            el.classList.remove("nav-hidden");
+        });
+    }
+
+    function isNavHidden() {
+        return document.querySelector(".nav-foldable")?.classList.contains("nav-hidden");
+    }
+
+    if (menutoggle) {
+        menutoggle.addEventListener("click", () => {
+            document.querySelectorAll(".nav-foldable").forEach(el => {
+                el.classList.toggle("nav-hidden");
+            });
+        });
+    }
+
+    function handleResize() {
+        if (window.innerWidth <= 520) {
+            hideNav();
+        } else {
+            showNav();
+        }
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+</script>

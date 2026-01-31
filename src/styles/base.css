@@ -1,0 +1,91 @@
+:root {
+    --bg: #070707;/* original color #070907*/
+    --bg-1: var(--bg);
+    --bg-2: #163a2a;
+    --bg-3: #445f4299;
+
+    --code: #0b1d17;
+
+    --accent: #40f896;
+
+    --txt:   #f0fff4;
+    --txt-2: #c6e8d0;
+    --txt-3: #8fa99a;
+    --txt-4: #131313;
+
+    --link: #40f896;
+
+    --radius: 12px;
+
+    --danger-1: #ff3b1f;
+    --danger-2: #5a0f0f;
+
+    --blue: #009dff;
+}
+
+
+:root[data-theme="light"] {
+    --bg: #c4e0bb;
+    --bg-2: #92e687;
+    --bg-3: #b1b8b2;
+
+    --accent: #3dd96f;
+    --accent-2: #28b4ad;
+    --accent-3: #1e40ff;
+    
+
+    --txt: #1c2a20;
+    --txt-2: #3d5a45;
+    --txt-3: #62786c;
+
+    --link: #1e8449;
+
+    --radius: 12px;
+
+    --danger-1: #e12424;
+    --danger-2: #eac9c9;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--txt);
+    font-family: monospace;
+    transition: all 0.3s ease;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    
+}
+
+p {
+    color: var(--txt-2);
+    margin: 2px 0;
+    line-height: 1.25rem;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,40 @@
+---
+import Mainlayout from '../../layouts/main.astro'; 
+---
+
+<Mainlayout title="Login">
+	<main>
+        <section id="warning" class="hidden" style="background-color: var(--danger-2); border-bottom: 2px solid var(--danger-1);">
+        </section>
+		<section>
+            <h1>Login</h1>
+            <p>Log in with your 25565.club account</p>
+        </section>
+		<section style="gap: 5px;" id="mainform">
+            <input id="username" type="text" placeholder="Username">
+            <input id="password" type="password" placeholder="Password">
+            <p style="color: var(--danger-1);" id="authstatus"></p>
+            <button id="btn-login">Login</button>
+        </section>
+		<section>
+			<p>New? <a href="/auth/register">Create an Account!</a></p>
+		</section>
+	</main>
+    <script type="module" src="/scripts/main.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const loginrequiredmessageParam = params.get('loginrequiredmessage');
+        const warningSection = document.getElementById("warning");
+
+        if (loginrequiredmessageParam) {
+            if (warningSection) {
+                warningSection.classList.remove("hidden")
+                warningSection.innerHTML = `
+                    <h3>Login required!</h3>
+                    <p>You need to log in or sign up to access this page</p>
+                `
+            };
+        };
+        
+    </script>
+</Mainlayout>

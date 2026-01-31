@@ -1,0 +1,41 @@
+---
+const { title = "Home" } = Astro.props;
+import Navbar from '../components/navbar.astro';
+import Footer from '../components/footer.astro'
+import '../styles/base.css';
+import '../styles/main.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25565 - {title}</title>
+
+    <link rel="apple-touch-icon" sizes="192x192" href='/favicon/favicon-192x.png' />
+    <link rel="icon" type="image/png" sizes="32x32" href='/favicon/favicon-32x.png' />
+    <link rel="icon" type="image/png" sizes="16x16" href='/favicon/favicon-16x.png' />
+
+    <script src="https://cdn.databuddy.cc/databuddy.js" data-client-id="fUdK5_in_OB2bHFLnrM8C" data-enable-batching="true" crossorigin="anonymous" async></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <meta name="description" content="Subdomains for gameservers, websites and more. For FREE!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="25565.club" />
+    <meta property="og:url" content={Astro.site} />
+    <meta property="og:title" content={`25565.club - ${title}`} />
+    <meta property="og:image" content={`https://25565.club/favicon/favicon-512x.png`} />
+    <meta property="og:description" content="Subdomains for gameservers, websites and more. For FREE!" />
+</head>
+<body>
+    <Navbar />
+    <noscript>
+        <p style="text-align:center">
+            This site works best with JavaScript enabled.
+        </p>
+    </noscript>
+    <slot />
+    <Footer />
+</body>
+</html>

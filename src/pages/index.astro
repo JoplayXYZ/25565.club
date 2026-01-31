@@ -1,0 +1,22 @@
+---
+import Mainlayout from '../layouts/main.astro'; 
+const title = 'Home';
+---
+
+<Mainlayout title={title}>
+	<main>
+		<section>
+			<div style="text-align: center;">
+				<h1>25565.club</h1>
+			</div>
+			
+			<p>Free subdomains for Gameservers, Websites and more. <span style="font-weight: bolder; color: white;">For FREE!</span></p>
+			<div style="text-align: center;">
+				<p style="color: white;">In development</p>
+			</div>
+		</section>
+		<section>
+			<button onclick="window.location.href = '/auth/register'">Get Started</button>
+		</section>
+	</main>
+</Mainlayout>

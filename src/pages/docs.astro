@@ -1,0 +1,78 @@
+---
+import { Menu } from '@lucide/astro';
+import MainLayout from '../layouts/main.astro';
+import '../styles/docs.css'
+const title = 'Documentation';
+---
+
+<MainLayout title={title}>
+    <main class="docs">
+        <section class="docs-sidebar">
+            <div style="display: flex; justify-content: space-between;"><h2>Pages</h2><Menu id="menu-toggle" size="18"/></div><br class="docs-foldable">
+            <a class="docs-page docs-foldable" href="/docs">Overview</a>
+            <p class="docs-foldable"> Tutorials</p>
+            <a class="docs-page docs-foldable" href="/docs?page=creating-a-subdomain">Creating a subdomain</a>
+            <a class="docs-page docs-foldable" href="/docs?page=dns-records">DNS Records</a>
+            <p class="docs-foldable"> Other</p>
+            <a class="docs-page docs-foldable" href="/docs?page=invite-codes">Invite codes</a>
+        </section>
+    
+        <section>
+            <div id="md-container"></div>
+        </section>
+    </main>
+
+    <script type="module">
+        import { marked } from "https://cdnjs.cloudflare.com/ajax/libs/marked/16.3.0/lib/marked.esm.js";
+
+        async function loadMarkdown(path) {
+            const container = document.getElementById("md-container");
+
+            try {
+                const res = await fetch(path);
+                const md = await res.text();
+                if (!res.ok) throw new Error("Not found");
+                if (!container) return;
+
+                const html = await marked.parse(md);
+                container.innerHTML = html;
+            } catch (err) {
+                if (container) container.textContent = "Error loading page: " + err.message;
+                else console.error("Error loading page:", err);
+            }
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const pageParam = params.get('page');
+
+        if (pageParam) {
+            loadMarkdown("/docs/" + pageParam + ".md");
+        } else {
+            loadMarkdown("/docs/index.md");
+        }
+
+        const menutoggle = document.getElementById("menu-toggle")
+        var menutoggled = true;
+
+        menutoggle.addEventListener('click', () => {
+            if (menutoggled == true) {
+                menutoggled = false;
+                document.querySelectorAll('.docs-foldable').forEach(el => {
+                    el.classList.add("docs-hidden")
+                });
+            } else if (menutoggled == false) {
+                menutoggled = true;
+                document.querySelectorAll('.docs-hidden').forEach(el => {
+                    el.classList.remove("docs-hidden")
+                });
+            };
+        });
+
+        // added this shit ton of semicolons because it somehow is valid
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+    </script>
+
+</MainLayout>
