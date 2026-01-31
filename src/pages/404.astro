@@ -1,0 +1,34 @@
+---
+import Mainlayout from '../layouts/main.astro'; 
+const title = '404 - Not found';
+const time = new Date().toLocaleTimeString("en-GB", {
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit"
+});
+---
+
+<Mainlayout title={title}>
+    <main>
+        <section style="border: none; background: none">
+        <pre>
+            LOGS:
+
+            [WATCH] "<span class="pathname"></span>" <span style="color: #535353;">{time}</span>
+            [GET] "<span class="pathname"></span>" <span style="color: #535353;">{time}</span>
+            [404] could not find "<span class="pathname"></span>" <span style="color: #535353;">{time}</span>
+
+            404 PAGE NOT FOUND
+            <a href="/">&gt; Return</a>
+        </pre>
+    </main>
+    <script>
+        const pathname = window.location.pathname;
+        const pathnameel = document.getElementsByClassName("pathname");
+
+        for (let i = 0; i < pathnameel.length; i++) {
+            pathnameel[i].textContent = pathname;
+        }
+    </script>
+
+</Mainlayout>
