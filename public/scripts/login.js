@@ -77,7 +77,7 @@ export async function login(mode) {
         if (!mode) {
             window.location.href = "/dash"
         } else if (mode == "register") {
-            window.location.href = "/creating-account"
+            window.location.href = "/auth/creating-account"
         }
     } catch(err) {
         console.error("Failed to log in: " + err);

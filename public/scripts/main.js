@@ -21,7 +21,7 @@ loginCheckComplete.then(() => {
         window.location.href = "/auth/login?loginrequiredmessage=true";
     }
                 
-    if (pathname.startsWith('/auth') && loggedIn == true) {
+    if (pathname.startsWith('/auth') && loggedIn == true && pathname !== '/auth/creating-account') {
         window.location.href = "/dash";
     }
 })

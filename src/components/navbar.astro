@@ -140,16 +140,13 @@ import LogoInvert from '../assets/img/25565_invert.png';
 <script type="module">
     const btntxt = document.getElementById("loginbtntxt");
     const btn = document.getElementById("loginbtn");
-    import { loggedIn } from "/scripts/main.js";
+    import { loggedIn } from "/src/scripts/main.js";
 
-    loginCheckComplete.then(() => { 
-        if (loggedIn) {
-            btntxt.textContent = "Dashboard";
-            btn.href = "/dash";
-        }
-    });
-    
-</script>
+    if (loggedIn) {
+        btntxt.textContent = "Dashboard";
+        btn.href = "/dash";
+    }
+</script> -->
 <script>
     const menutoggle = document.getElementById("nav-menu");
 
