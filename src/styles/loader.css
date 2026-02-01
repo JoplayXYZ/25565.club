@@ -1,8 +1,8 @@
-body.introplaying { 
+body.loaderplaying { 
     overflow: hidden; 
 }
 
-#intro-overlay {
+#loader-overlay {
     position: fixed;
     top: 0; left: 0;
     width: 100vw; height: 100vh;
@@ -16,14 +16,14 @@ body.introplaying {
     flex-direction: column;
 }
 
-#intro-overlay.fade-out {
+#loader-overlay.fade-out {
     opacity: 0;
     pointer-events: none;
     filter: blur(10px);
     transform: scale(1.5);
 }
 
-#intro-overlay img {
+#loader-overlay img {
     width: 5rem;
     max-width: 150px;
 }
